@@ -1,0 +1,275 @@
+:root {
+  --clr-primary: #c90e0e;
+  --clr-gray: #6a6d7a;
+  --clr-gray2: #a7a7a7;
+  --clr-gray3: #a9a9a9;
+
+  --bg-lite: #ffffff0d;
+
+  --rounded-18: 18px;
+  --rounded-10: 10px;
+
+  --transition-base: all 0.3s linear;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
+  background-color: #000000;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  padding-left: 0;
+}
+
+input,
+textarea {
+  border: none !important;
+  outline: none !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+figure {
+  margin-bottom: 0;
+}
+
+img.cover {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+img.fill {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+.main-container {
+  width: min(1280px, 90%);
+  margin: 0 auto;
+}
+
+section {
+  overflow: hidden;
+}
+
+.section-padding {
+  padding: 6rem 0;
+}
+
+.hero-heading {
+  font-size: clamp(34px, 3.4vw, 70px);
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 800;
+}
+
+.section-heading {
+  font-size: clamp(28px, 3vw, 56px);
+  font-weight: 800;
+  margin-bottom: 1.6rem;
+}
+
+.section-subheading {
+  font-size: clamp(14px, 1.6vw, 22px);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--clr-primary);
+  width: max-content;
+  margin-bottom: 16px;
+  position: relative;
+  padding-left: 3rem;
+}
+
+.section-subheading::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 1.8rem;
+  height: 2px;
+  background-color: var(--clr-primary);
+  border-radius: var(--rounded-10);
+}
+
+.section-subheading::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 1.2rem;
+  height: 2px;
+  background-color: #fe7003;
+  border-radius: var(--rounded-10);
+}
+
+.desc {
+  font-size: clamp(16px, 1.1vw, 24px);
+  font-weight: 500;
+  color: var(--clr-gray2);
+}
+
+.card-heading {
+  font-weight: 700;
+  font-size: clamp(20px, 1.6vw, 30px);
+  margin-bottom: 13px;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  white-space: nowrap;
+  padding: 1.4rem 2.4rem;
+  border-radius: var(--rounded-18);
+  overflow: hidden;
+}
+
+/* ========= BUTTON HOVER ANIMATIONS ========= */
+.primary-btn {
+  position: relative;
+  overflow: hidden;
+  background: var(--clr-primary);
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 500;
+  border-radius: var(--rounded-18);
+  padding: 18px 34px;
+  transition: transform 0.3s ease, box-shadow 0.4s ease;
+  z-index: 1;
+}
+
+/* subtle lift + glow */
+.primary-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 20px rgba(201, 14, 14, 0.6);
+}
+
+/* glowing pulse effect */
+.primary-btn:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 rgba(201, 14, 14, 0.5);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.primary-btn:hover:after {
+  opacity: 1;
+  animation: pulse-glow 1.2s infinite;
+}
+
+/* pulse animation keyframes */
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(201, 14, 14, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(201, 14, 14, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(201, 14, 14, 0);
+  }
+}
+
+/* //////////////////// HELPER CLASSES ////////////////////// */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+/* //////////////////// UTILITY CLASSES ////////////////// */
+.rounded-18 {
+  border-radius: var(--rounded-18);
+}
+.rounded-10 {
+  border-radius: var(--rounded-10);
+}
+
+.clr-gray {
+  color: var(--clr-gray) !important;
+}
+
+.clr-primary {
+  color: var(--clr-primary);
+}
+
+.clr-gray-2 {
+  color: var(--clr-gray2);
+}
+
+.clr-gray-3 {
+  color: var(--clr-gray3);
+}
+
+.bg-lite {
+  background-color: var(--bg-lite) !important;
+}
+
+[data-animate] {
+  opacity: 0;
+}
+
+[data-animate].animated {
+  opacity: 1;
+}
+
+.fast-animation {
+  --animate-duration: 0.5s;
+}
+
+.slow-animation {
+  --animate-duration: 2s;
+}
+
+/*////////////////// MEDIA QUERIES /////////////////////*/
+@media (min-width: 1600px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@media (max-width: 991px) {
+  .section-padding {
+    padding: 4rem 0;
+  }
+}
