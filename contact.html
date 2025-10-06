@@ -30,7 +30,7 @@
   </head>
   <body>
     <!-- ================= HEADER ================= -->
-    <header data-animate="fadeIn">
+    <header data-animate="fadeIn" data-animate-delay="200">
       <div class="main-container">
         <nav class="navbar navbar-expand-lg">
           <div class="container">
@@ -153,30 +153,36 @@
               <form data-animate="fadeInLeft" data-animate-delay="100">
                 <div class="row mb-3">
                   <div class="col-md-6 mb-3 mb-md-0">
-                    <input
-                      type="text"
-                      class="form-control form-control-dark"
-                      placeholder="Name*"
-                      required
-                    />
+                    <div class="box-gradient border-r-gradient rounded-44">
+                      <input
+                        type="text"
+                        class="form-control form-control-dark"
+                        placeholder="Name*"
+                        required
+                      />
+                    </div>
                   </div>
                   <div class="col-md-6">
-                    <input
-                      type="email"
-                      class="form-control form-control-dark"
-                      placeholder="Email*"
-                      required
-                    />
+                    <div class="box-gradient border-r-gradient rounded-44">
+                      <input
+                        type="email"
+                        class="form-control form-control-dark"
+                        placeholder="Email*"
+                        required
+                      />
+                    </div>
                   </div>
                 </div>
 
                 <div class="mb-4">
-                  <textarea
-                    class="form-control form-control-dark textarea-lg"
-                    rows="8"
-                    placeholder="Write a Message*"
-                    required
-                  ></textarea>
+                  <div class="box-gradient border-r-gradient rounded-44">
+                    <textarea
+                      class="form-control form-control-dark textarea-lg"
+                      rows="8"
+                      placeholder="Write a Message*"
+                      required
+                    ></textarea>
+                  </div>
                 </div>
 
                 <button type="submit" class="button primary-btn">
@@ -225,12 +231,15 @@
     >
       <div class="main-container">
         <figure class="rounded-5 overflow-hidden w-100" style="height: 50rem">
-          <img
-            src="assets/images/map.png"
-            alt="Map"
+          <iframe
+            src="https://www.google.com/maps?q=321+Taha+Mohamed+El+Nozha&output=embed"
+            width="100%"
+            height="100%"
+            style="border: 0"
+            allowfullscreen=""
             loading="lazy"
-            class="cover"
-          />
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </figure>
       </div>
     </section>
@@ -254,6 +263,8 @@
             <p class="fs-4 clr-gray-3 lh-base mt-4" style="max-width: 37rem">
               Enjoy Top Quality Streaming With Nestor IPTV Includes all your
               favorite channels with local news, live sports, weather.
+              Experience seamless entertainment with crystal-clear HD quality
+              and zero buffering anytime, anywhere.
             </p>
           </div>
           <div class="col-lg-7 row g-4 g-lg-0">

@@ -39,7 +39,7 @@ header {
 }
 
 #hero-home {
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(#0a010299, #0a0102e5, #0a0102b2),
     url("../images/hero-img.jpg") no-repeat center center/cover;
   position: relative;
@@ -166,6 +166,7 @@ header {
   padding: 6px;
   border-radius: 43px;
   transition: var(--transition-base);
+  height: 100%;
 }
 
 #features-home .feature-card:hover {
@@ -181,16 +182,19 @@ header {
 }
 
 #features-home .icon-box {
-  height: 9rem;
-  width: 9rem;
-  border-radius: 50%;
-  background-color: var(--clr-primary);
-  font-size: 3rem;
-  text-align: center;
+  height: 10rem;
+  width: 10rem;
   margin: -13rem auto 2rem;
   position: relative;
   z-index: 3;
-  border: 2px dotted var(--clr-primary);
+}
+
+#features-home .icon-box .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
 }
 
 #features-home .feature-desc {
@@ -200,9 +204,9 @@ header {
 
 .faq-item {
   background-color: var(--bg-lite);
-  border-radius: 30px !important;
+  border-radius: var(--rounded-44) !important;
   margin-bottom: 2.2rem;
-  border: none;
+  border: 0 !important;
   overflow: hidden;
 }
 
@@ -212,6 +216,8 @@ header {
   font-weight: 600;
   padding: 3rem;
   font-size: clamp(20px, 1.6vw, 32px);
+  border: 0 !important;
+  outline: 0 !important;
 }
 .accordion-button:focus {
   box-shadow: none;
@@ -322,7 +328,7 @@ header {
 footer {
   position: relative;
   overflow: hidden;
-  padding: 8rem 0 4rem;
+  padding: 4rem 0;
   z-index: 10;
 }
 
@@ -336,6 +342,7 @@ footer li a {
 }
 
 footer li a:hover {
+  transform: translateX(5px);
   color: #fff;
 }
 
@@ -353,6 +360,10 @@ footer .copyright-text {
 }
 
 @media (max-width: 991px) {
+  #hero-home {
+    min-height: 60rem;
+  }
+
   .navbar-nav {
     background-color: #000000c6;
     border-radius: 18px;
